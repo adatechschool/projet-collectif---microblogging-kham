@@ -12,8 +12,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+
+        $users = User::latest()->get();
+
+        return view('users.index', ['users' => $users]);
 
     }
 
@@ -41,22 +46,22 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user 
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      * @param int $id
      * @return \Illuminate\Http\View
-     * 
+     *
      */
 
     public function show($id)
-    { 
+    {
         //  $user = User::all();
          return view('users.show', [
              'user'=>User::findOrFail($id)
          ]);
      }
-   
-    
+
+
 
 
     /**
