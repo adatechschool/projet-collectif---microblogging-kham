@@ -20,14 +20,14 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white mr-4">
+      <a href="/users" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white mr-4">
         Profilotter
       </a>
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white mr-4">
+      <a href="/posts" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white mr-4">
         Ottergraphy
       </a>
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white">
-      <form class="flex items-center">
+      <form class="flex items-center" action="/404">
     <label for="simple-search" class="sr-only">>Otter Search</label>
     <div class="relative w-full">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
