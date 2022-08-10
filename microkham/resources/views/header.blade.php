@@ -27,7 +27,7 @@
         Ottergraphy
       </a>
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white">
-      <form class="flex items-center">   
+      <form class="flex items-center">
     <label for="simple-search" class="sr-only">>Otter Search</label>
     <div class="relative w-full">
         <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -35,7 +35,7 @@
         </div>
         <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
     </div>
-    <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-header bg-button rounded-lg border border-header hover:bg-forest focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-header bg-button rounded-lg border border-header hover:bg-forest focus:ring-4 focus:outline-none focus:ring-white dark:bg-button dark:hover:bg-forest dark:focus:bg-forest">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         <span class="sr-only">Otter Search</span>
     </button>
@@ -43,7 +43,19 @@
       </a>
     </div>
     <div>
-      <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Downlotter</a>
+      @if (Route::has('login'))
+                <div class="block mt-4 lg:inline-block lg:mt-0 text-forest hover:text-white mr-4">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-forest hover:text-white underline">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 text-forest hover:text-white underline">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-forest hover:text-white underline">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
     </div>
   </div>
 </nav>

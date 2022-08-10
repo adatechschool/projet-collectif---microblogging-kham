@@ -30,4 +30,9 @@ Route::resource('posts', PostController::class);
 Route::resource('users', UserController::class);
 
 
+// Méthode fallback() en dernière position
+Route::fallback(function() {
+   return view('404'); // la vue 404.blade.php
+});
+
 require __DIR__.'/auth.php';

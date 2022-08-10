@@ -1,8 +1,9 @@
 <x-guest-layout>
+  <div >
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{asset('008.png')}}" class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
 
@@ -24,6 +25,20 @@
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <!-- Biography -->
+            <div class="mt-4">
+                <x-label for="biography" :value="__('Biography')" />
+
+                <x-input id="biography" class="block mt-1 w-full" type="text" name="biography" :value="old('biography')" required />
+            </div>
+
+             <!-- profil_url -->
+            <div>
+                <x-label for="profil_url" :value="__('Profil')" />
+
+                <x-input id="profil_url" class="block mt-1 w-full" type="text" name="profil_url" :value="old('profil_url')" required autofocus />
             </div>
 
             <!-- Password -->
@@ -50,10 +65,11 @@
                     {{ __('Already registered?') }}
                 </a>
 
-                <x-button class="ml-4">
+                <x-button class="ml-4 bg-button">
                     {{ __('Register') }}
                 </x-button>
             </div>
         </form>
     </x-auth-card>
+</div>
 </x-guest-layout>
